@@ -17,7 +17,7 @@
             <ul>
                 <li>
                     <router-link to="/cadastroCliente">
-                        <a href="#">
+                        <a href="#"  @click="closeModalSide">
                             <span class="icon"><i class="fas fa-user-friends"></i></span>
                             <span class="item">Cadastrar Cliente</span>
                         </a>
@@ -25,7 +25,7 @@
                 </li>
                 <li>
                     <router-link to="/cadastroFuncionario">
-                    <a href="#">
+                    <a href="#" @click="closeModalSide">
                         <span class="icon"><i class="fas fa-user-tie"></i></span>
                         <span class="item">Cadastrar Funcionário</span>
                     </a>
@@ -33,7 +33,7 @@
                 </li>
                 <li>
                 <router-link to="/cadastroDocumento">
-                    <a href="#">
+                    <a href="#"  @click="closeModalSide">
                         <span class="icon"><i class="fas fa-file"></i></span>
                         <span class="item">Cadastrar Documento</span>
                     </a>
@@ -75,10 +75,14 @@ export default {
             }).then((result) => {
             if (result.isConfirmed) {
                 // Realizar logout ou redirecionar para a tela de logout
+                $(".hamburger").click()
                 this.$router.push('/');
             }
             });
         },
+        closeModalSide() {
+            $(".hamburger").click();
+        }
     },
 }
 </script>

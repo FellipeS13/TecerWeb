@@ -109,6 +109,8 @@ export default {
   },
   data() {
     return {
+      modoEdicao: false,
+      accessGranted: false,
       funcionario: {
         nome: '',
         dataNascimento: '',
@@ -257,7 +259,6 @@ export default {
         const funcionario = await response.json();
         this.funcionario = funcionario;
         this.funcionario.dataNascimento =  new Date(funcionario.dataNascimento).toISOString().slice(0, 10);
-        console.log(this.funcionario)
       } catch (error) {
         console.error('Erro ao obter o funcionario:', error);
       }
