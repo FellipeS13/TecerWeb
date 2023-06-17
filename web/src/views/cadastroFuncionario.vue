@@ -278,7 +278,7 @@ export default {
                 text: 'As informações do funcionário foram atualizadas com sucesso.',
                 confirmButtonText: 'OK'
               });
-              this.funcionario = []; // Limpar campos do formulário
+              this.fecharEdicao(); // Limpar campos do formulário
               $('#exampleModalToggle2').modal('hide');
               this.obterFuncionario();
             } else {
@@ -296,7 +296,15 @@ export default {
       $('#exampleModalToggle').modal('show');
     },
     fecharEdicao() {
-      this.funcionario = []
+      this.funcionario = {
+        nome: '',
+        dataNascimento: '',
+        cpf: '',
+        rg: '',
+        cargo: '',
+        username: '',
+        password: '',
+      }
       this.modoEdicao = false
     }
   }
