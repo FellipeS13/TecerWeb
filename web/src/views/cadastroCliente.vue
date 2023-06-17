@@ -17,17 +17,17 @@
             </div>
             <div class="modal-body">
               <div class="col-md-12">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" v-model="cliente.nome" required>
+                <label for="nome">Nome:<span class="text-danger">*</span></label>
+                <input type="text" id="nome" name="nome" maxlength="50" v-model="cliente.nome" required>
               </div>
               <div class="col-sm-12">
                 <div class="row">
                   <div class="col-8 col-sm-8">
-                    <label for="cpf">CPF:</label>
-                    <input type="text" id="cpf" name="cpf" v-model="cliente.cpf" required>
+                    <label for="cpf">CPF:<span class="text-danger">*</span></label>
+                    <input type="text" id="cpf" name="cpf" v-model="cliente.cpf" v-mask="'###.###.###-##'" required>
                   </div>
                   <div class="col-4 col-sm-4">
-                    <label for="estadoCivil">Estado Civil:</label>
+                    <label for="estadoCivil">Estado Civil:<span class="text-danger">*</span></label>
                     <input type="text" id="estadoCivil" name="estadoCivil" v-model="cliente.estadoCivil" required>
                   </div>
                 </div>
@@ -41,12 +41,12 @@
                 <div class="row">
                   <div class="col-8 col-sm-8">
 
-                    <label for="endereco">Endereço:</label>
+                    <label for="endereco">Endereço:<span class="text-danger">*</span></label>
                 <input type="text" id="endereco" name="endereco" v-model="cliente.endereco" required>
                   </div>
                   <div class="col-4 col-sm-4">
-                    <label for="cep">CEP:</label>
-                    <input type="text" id="cep" name="cep" v-model="cliente.cep" required>
+                    <label for="cep">CEP:<span class="text-danger">*</span></label>
+                    <input type="text" id="cep" name="cep" v-model="cliente.cep" v-mask="'#####-###'" required>
                   </div>
                 </div>
               </div>
@@ -75,11 +75,11 @@
                 <div class="row">
                   <div class="col-7 col-sm-7">
                     <label for="empresa">Empresa:</label>
-              <input type="text" id="empresa" name="empresa" v-model="cliente.empresa" required>
+              <input type="text" id="empresa" name="empresa" v-model="cliente.empresa">
                   </div>
                   <div class="col-5 col-sm-5">
                     <label for="cnpj">CNPJ:</label>
-              <input type="text" id="cnpj" name="cnpj" v-model="cliente.cnpj" required>
+              <input type="text" id="cnpj" name="cnpj" v-model="cliente.cnpj" v-mask="'##.###.###/####-##'">
                   </div>
                 </div>
               </div>
@@ -91,12 +91,11 @@
                 <div class="row">
                   <div class="col-7 col-sm-7">
                     <label for="endereco">Endereço da Empresa:</label>
-               <input type="text" id="enderecoEmpresa" name="enderecoEmpresa" v-model="cliente.enderecoEmpresa" required>
+               <input type="text" id="enderecoEmpresa" name="enderecoEmpresa" v-model="cliente.enderecoEmpresa" >
                   </div>
                   <div class="col-5 col-sm-5">
                     <label for="cepEnderecoEmpresa">CEP da Empresa:</label>
-                  <input type="text" id="cepEnderecoEmpresa" name="cepEnderecoEmpresa" v-model="cliente.cepEnderecoEmpresa"
-                required>
+                  <input type="text" id="cepEnderecoEmpresa" name="cepEnderecoEmpresa" v-mask="'#####-###'" v-model="cliente.cepEnderecoEmpresa">
                   </div>
                 </div>
               </div>
@@ -185,7 +184,7 @@
               <input type="email" id="email" name="email" v-model="cliente.email" required>
 
               <label for="telefone">Telefone:</label>
-              <input type="text" id="telefone" name="telefone" v-model="cliente.telefone" required>
+              <input type="text" id="telefone" name="telefone" v-model="cliente.telefone" v-mask="'(##)#####-####'"  required>
 
               <div class="col-sm-12">
                 <div class="row">

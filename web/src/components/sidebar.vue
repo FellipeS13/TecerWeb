@@ -11,7 +11,11 @@
         </div>
         <div class="sidebar">
             <div class="profile">
-                <img src="../assets/img/whiteLogo.png">
+                <router-link to="/cadastroCliente">
+                 <a>
+                    <img src="../assets/img/whiteLogo.png">
+                 </a>
+                </router-link>
                 <h3>Bem-vindo</h3>
             </div>
             <ul>
