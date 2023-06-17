@@ -160,9 +160,15 @@ export default {
               icon: 'error',
               confirmButtonText: 'OK'
             }).then(() => {
-              window.location.href = '/cadastroCliente';
+              this.showAccessAlert();
             });
           }
+        }
+      }).then((result) => {
+        if (result.dismiss) {
+          setTimeout(() => {
+            window.location.href = '/cadastroCliente';
+          }, 100);
         }
       });
     },
