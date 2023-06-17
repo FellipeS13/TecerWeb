@@ -21,7 +21,7 @@
               <label for="cliente">Cliente:</label>
               <select id="selectCliente" name="cliente" v-model="documento.cliente_id" required>
                 <option  disabled selected value="">Selecione um cliente</option>
-                <option v-for="cliente in clientes" :value="cliente.id" >{{ cliente.nome }}</option>
+                <option v-for="cliente in clientes" :key="cliente.id" :value="cliente.id" >{{ cliente.nome }}</option>
               </select>
 
               <label for="nome">Nome do Documento:</label>
@@ -43,7 +43,7 @@
               <label for="cliente">Categoria:</label>
               <select id="selectCategoria" name="categoria" v-model="documento.categoria_id" required>
                 <option  disabled selected value="">Selecione uma categoria</option>
-                <option v-for="categoria in categorias" :value="categoria.id" >{{ categoria.nome }}</option>
+                <option v-for="categoria in categorias" :key="categoria.id" :value="categoria.id" >{{ categoria.nome }}</option>
               </select>
 
               <label for="arquivo">Documento:</label>
@@ -152,7 +152,7 @@ export default {
             text: 'O documento do cliente foi salvo no banco de dados.',
             confirmButtonText: 'OK'
           });
-            this.documento = []; // Limpar campos do formulário
+            this.fecharEdicao(); // Limpar campos do formulário
             $('#exampleModal').modal('hide');
             this.obterDocumentos();
           } else {
@@ -279,7 +279,13 @@ export default {
       this.obterDocumentoPorId(id);
     },
     fecharEdicao() {
-      this.documento = []
+      Object.keys(this.documento).forEach((campo) => {
+        if(campo == 'arquivo'){
+          this.documento[campo] = null;
+        }else{
+          this.documento[campo] = '';
+        }
+      });   
       this.modoEdicao = false
     }
   }

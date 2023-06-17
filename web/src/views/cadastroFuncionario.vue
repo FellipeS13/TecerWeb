@@ -297,15 +297,9 @@ export default {
       $('#exampleModalToggle').modal('show');
     },
     fecharEdicao() {
-      this.funcionario = {
-        nome: '',
-        dataNascimento: '',
-        cpf: '',
-        rg: '',
-        cargo: '',
-        username: '',
-        password: '',
-      }
+      Object.keys(this.funcionario).forEach((campo) => {
+        this.funcionario[campo] = '';
+      });
       this.modoEdicao = false
     }
   }

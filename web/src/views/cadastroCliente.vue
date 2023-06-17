@@ -350,7 +350,7 @@ export default {
               text: 'As informações do cliente foram atualizadas com sucesso.',
               confirmButtonText: 'OK'
             });
-              this.cliente = []; // Limpar campos do formulário
+              this.fecharEdicao(); // Limpar campos do formulário
               $('#exampleModalToggle4').modal('hide');
               this.obterClientes();
             } else {
@@ -429,7 +429,9 @@ export default {
       $('#exampleModalToggle').modal('show');
     },
     fecharEdicao() {
-      this.cliente = []
+      Object.keys(this.cliente).forEach((campo) => {
+        this.cliente[campo] = '';
+      });
       this.modoEdicao = false
     }
   },
