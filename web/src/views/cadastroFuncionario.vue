@@ -192,6 +192,7 @@ export default {
                 });
                   this.fecharEdicao(); // Limpar campos do formulário
                   $('#exampleModalToggle2').modal('hide');
+                   this.obterFuncionario();
                 } else {
                   Swal.fire({
                   icon: 'error',
