@@ -167,7 +167,7 @@ export default {
       }).then((result) => {
         if (result.dismiss) {
           setTimeout(() => {
-            window.location.href = '/cadastroCliente';
+           this.$router.push('/cadastroCliente');
           }, 100);
         }
       });
