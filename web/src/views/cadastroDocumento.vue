@@ -241,7 +241,7 @@ export default {
             text: 'O documento do cliente foi atualizado com sucesso.',
             confirmButtonText: 'OK'
           });
-            this.documento = []; // Limpar campos do formulário
+            this.fecharEdicao(); // Limpar campos do formulário
             $('#exampleModal').modal('hide');
             this.obterDocumentos();
           } else {

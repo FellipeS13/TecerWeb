@@ -302,7 +302,7 @@ export default {
                   text: 'As informações do cliente foram salvas no banco de dados.',
                   confirmButtonText: 'OK'
                 });
-                  this.cliente = []; // Limpar campos do formulário
+                  this.fecharEdicao(); // Limpar campos do formulário
                   $('#exampleModalToggle4').modal('hide');
                   this.obterClientes();
                 } else {

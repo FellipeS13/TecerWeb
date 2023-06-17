@@ -190,7 +190,7 @@ export default {
                   text: 'As informações do funcionário foram cadastradas com sucesso.',
                   confirmButtonText: 'OK'
                 });
-                  this.funcionario = {}; // Limpar campos do formulário
+                  this.fecharEdicao(); // Limpar campos do formulário
                   $('#exampleModalToggle2').modal('hide');
                 } else {
                   Swal.fire({
