@@ -26,7 +26,7 @@ export default {
   methods: {
     login() {
       // Consulta ao servidor
-      fetch('http://52.67.83.67:3000/login', {
+      fetch('https://loadbalancetecer-844670428.sa-east-1.elb.amazonaws.com/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
