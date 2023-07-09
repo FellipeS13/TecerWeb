@@ -2,9 +2,12 @@
   <div class="corpoPage">
     <sidebar />
     <form class="form-container" @submit.prevent="modoEdicao ? editarCliente() : cadastrarCliente()">
+      <div class="ms-5">
+        <h4 class="modo">Cadastro de clientes</h4>
+      </div>
       <div class="btnModal">
         <button type="button" class="btn" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><i
-            class="fa-solid fa-plus"></i> Novo Cliente</button>
+           class="fa-solid fa-plus"></i> Novo Cliente</button>
       </div>
       <div class="modal fade" data-bs-backdrop="static" id="exampleModalToggle" aria-hidden="true"
         aria-labelledby="exampleModalToggleLabel" tabindex="-1">
@@ -453,13 +456,13 @@ export default {
 
 
 .form-container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f8f8f8;
-  border-radius: 5px;
-  display: flex;
-  justify-content: flex-end;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .tabela {
