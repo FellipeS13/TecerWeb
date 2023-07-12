@@ -67,10 +67,15 @@ export default {
   align-items: center;
   height: 100vh;
   overflow: hidden;
+  background-image: url("C:\Users\felli\OneDrive\Desktop\TecerWeb\web\src\assets\img\logo.png");
+  background-repeat: no-repeat;
+  background-size: 18%;
+  background-position: top;
+  
 }
 
-
 .form-container {
+  margin-top: 50px;
   width: 400px;
   background: linear-gradient(180deg, rgb(13, 27, 64) 25%, rgb(255, 255, 255) 20%);
   height: 400px;
@@ -81,6 +86,7 @@ export default {
   position: relative;
   box-shadow: 0 0.2rem 1rem gray;
   border-radius: 15px;
+  
 }
 
 .form {
@@ -88,6 +94,7 @@ export default {
   display: flex;
   flex-direction: column;
   margin-top: 90px;
+  background-color: white;
 }
 
 .form-container p {
@@ -96,6 +103,7 @@ export default {
   font-size: 30px;
   font-weight: 900;
   color: rgb(255, 255, 255);
+  background-color: rgb(13, 27, 64);
 }
 
 .form-container label {
@@ -104,6 +112,8 @@ export default {
   margin-bottom: 5px;
   font-size: 15px;
   font-weight: bold;
+  background-color: white;
+
 }
 
 .form-container .input {

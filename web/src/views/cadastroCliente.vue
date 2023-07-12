@@ -28,7 +28,12 @@
                   </div>
                   <div class="col-4 col-sm-4">
                     <label for="estadoCivil">Estado Civil:<span class="text-danger">*</span></label>
-                    <input type="text" id="estadoCivil" name="estadoCivil" v-model="cliente.estadoCivil" required>
+                    <select id="estadoCivil" name="estadoCivil" v-model="cliente.estadoCivil" required>
+                      <option value="default"></option>
+                      <option value="maca">Solteiro</option>
+                      <option value="laranja">Casado</option>
+                      <option value="banana">Viuvo(a)</option>
+                    </select>
                   </div>
                 </div>
               </div>
@@ -479,6 +484,7 @@ input[type="text"],
 input[type="date"],
 input[type="email"],
 input[type="password"],
+select,
 textarea {
   width: 100%;
   padding: 8px;

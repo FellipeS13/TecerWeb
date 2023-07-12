@@ -3,6 +3,7 @@
     <sidebar />
     <form class="form-container" @submit.prevent="modoEdicao ? editarDocumento() : cadastrarDocumento()">
       <div class="btnModal">
+        <input type="text" v-model="filtro" class="inputFilter" placeholder="Filtrar documentos" @input="filtrarDocumentos">
         <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
           <i class="fa-solid fa-plus"></i> Novo Documento
         </button>
@@ -124,6 +125,18 @@ export default {
           console.error('Erro ao obter a lista de Documentos:', error);
         });
     },
+
+  filtrarDocumentos() {
+      if (this.filtro === '') {
+        this.obterDocumentos(); // Se o filtro estiver vazio, exiba todos os documentos
+      } else {
+        this.dadosTabela = this.dadosTabela.filter(documento => {
+          // Filtre com base no critério de pesquisa (nome do documento)
+          return documento.nome.toLowerCase().includes(this.filtro.toLowerCase());
+        });
+      }
+    },
+    //Só mais um comentario teste
     handleFileUpload(event) {
       // Recupera o arquivo selecionado pelo usuário
       const file = event.target.files[0];
@@ -297,9 +310,18 @@ export default {
   background-color: #f8f8f8;
 }
 
+.inputFilter{
+  margin: 0px 10px -10px -205px;
+  display: inline;
+  height: 38px;
+  
+}
+
+
 .btnModal>button {
   background-color: rgb(13, 27, 64);
   color: white;
+  height: 4.5vh;
 }
 
 

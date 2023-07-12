@@ -20,7 +20,7 @@
             <td v-if="this.tipo == 'funcionario'">{{ dado.cargo }}</td>
 
             <td v-if="this.tipo == 'documento'">{{ dado.nome_cliente }}</td>
-            <td v-if="this.tipo == 'documento'">{{ dado.arquivo }}</td>
+            <td v-if="this.tipo == 'documento'">{{ dado.nome }}</td>
             <td v-if="this.tipo == 'documento'">{{ dado.nome_categoria }}</td>
 
             <td>
