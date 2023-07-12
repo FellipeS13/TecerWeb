@@ -2,6 +2,9 @@
   <div class="corpoPage">
     <sidebar />
     <form v-if="accessGranted" class="form-container" @submit.prevent="modoEdicao ? editarFuncionario() : cadastrarFuncionario()">
+      <div class="ms-5">
+        <h4 class="modo">Cadastro de funcionários</h4>
+      </div> 
       <div class="btnModal">
         <button type="button" class="btn" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><i
             class="fa-solid fa-plus"></i> Novo Funcionário</button>
@@ -326,14 +329,13 @@ export default {
 }
 
 .form-container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f8f8f8;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .tabela{

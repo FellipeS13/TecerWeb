@@ -2,6 +2,9 @@
   <div class="corpoPage">
     <sidebar />
     <form class="form-container" @submit.prevent="modoEdicao ? editarDocumento() : cadastrarDocumento()">
+      <div class="ms-5">
+        <h4 class="modo">Cadastro de documentos</h4>
+      </div>
       <div class="btnModal">
         <input type="text" v-model="filtro" class="inputFilter" placeholder="Filtrar documentos" @input="filtrarDocumentos">
         <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -326,14 +329,13 @@ export default {
 
 
 .form-container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f8f8f8;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .tabela {
