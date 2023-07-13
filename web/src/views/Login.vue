@@ -75,7 +75,7 @@ export default {
   
 }
 .bg{
-    background: url(./src/assets/img/bg.jpg) no-repeat;
+    background: url("../assets/img/bg.jpg") no-repeat;
     background-size: cover;
 }
 
