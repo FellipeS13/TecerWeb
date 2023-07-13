@@ -135,7 +135,7 @@ export default {
 
   methods: {
     async obterFuncionario(){
-      await fetch('http://52.67.83.67:3000/obterFuncionarios')
+      await fetch('https://api.tecercontabilidade.com.br/obterFuncionarios')
         .then(response => response.json())
         .then(data => {
           this.dadosTabela = data.map(funcionario => funcionario);
@@ -177,14 +177,14 @@ export default {
     },
     cadastrarFuncionario() {
       // Verificar se já existe um funcionário com o mesmo CPF ou RG cadastrado
-      fetch(`http://52.67.83.67:3000/funcionarios?cpf=${this.funcionario.cpf}&rg=${this.funcionario.rg}`)
+      fetch(`https://api.tecercontabilidade.com.br/funcionarios?cpf=${this.funcionario.cpf}&rg=${this.funcionario.rg}`)
         .then(response => response.json())
         .then(data => {
           if (data.length > 0) {
             alert('CPF ou RG já cadastrados');
           } else {
             // Realizar o cadastro se o CPF e RG não estiverem cadastrados
-            fetch('http://52.67.83.67:3000/funcionarios', {
+            fetch('https://api.tecercontabilidade.com.br/funcionarios', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
@@ -244,7 +244,7 @@ export default {
         });
 
         if (result.isConfirmed) {
-          await fetch(`http://52.67.83.67:3000/deletarFuncionario/${id}`, {
+          await fetch(`https://api.tecercontabilidade.com.br/deletarFuncionario/${id}`, {
             method: 'DELETE'
           }).then(response => {
             if (response.ok) {
@@ -262,7 +262,7 @@ export default {
     },
     async obterFuncionarioPorId(id) {
       try {
-        const response = await fetch(`http://52.67.83.67:3000/obterFuncionarioById/${id}`);
+        const response = await fetch(`https://api.tecercontabilidade.com.br/obterFuncionarioById/${id}`);
         if (!response.ok) {
           throw new Error('Erro ao obter o Funcionario');
         }
@@ -274,7 +274,7 @@ export default {
       }
     },
     async editarFuncionario() {
-        await fetch(`http://52.67.83.67:3000/editarFuncionario/${this.funcionario.id}`, {
+        await fetch(`https://api.tecercontabilidade.com.br/editarFuncionario/${this.funcionario.id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json'

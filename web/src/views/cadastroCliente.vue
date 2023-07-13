@@ -272,7 +272,7 @@ export default {
   methods: {
     cadastrarCliente() {
       // Verificar se já existe um CPF ou CNPJ cadastrado
-      fetch(`http://52.67.83.67:3000/clientes?cpf=${this.cliente.cpf}&cnpj=${this.cliente.cnpj}`)
+      fetch(`https://api.tecercontabilidade.com.br/clientes?cpf=${this.cliente.cpf}&cnpj=${this.cliente.cnpj}`)
         .then(response => response.json())
         .then(data => {
           if (data.length > 0) {
@@ -294,7 +294,7 @@ export default {
             }
           } else {
             // Realizar o cadastro se o CPF e CNPJ não estiverem cadastrados
-            fetch('http://52.67.83.67:3000/clientes', {
+            fetch('https://api.tecercontabilidade.com.br/clientes', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
@@ -342,7 +342,7 @@ export default {
         });
     },
     async editarCliente() {
-        await fetch(`http://52.67.83.67:3000/editarCliente/${this.cliente.id}`, {
+        await fetch(`https://api.tecercontabilidade.com.br/editarCliente/${this.cliente.id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json'
@@ -381,7 +381,7 @@ export default {
     },
     async obterClientes() {
       // Fazer uma requisição para obter a lista de clientes do banco de dados
-      await fetch('http://52.67.83.67:3000/obterClientes')
+      await fetch('https://api.tecercontabilidade.com.br/obterClientes')
         .then(response => response.json())
         .then(data => {
           this.dadosTabela = data.map(cliente => cliente);
@@ -403,7 +403,7 @@ export default {
         });
 
         if (result.isConfirmed) {
-          await fetch(`http://52.67.83.67:3000/deletarCliente/${id}`, {
+          await fetch(`https://api.tecercontabilidade.com.br/deletarCliente/${id}`, {
             method: 'DELETE'
           }).then(response => {
             if (response.ok) {
@@ -420,7 +420,7 @@ export default {
     },
     async obterClientePorId(id) {
       try {
-        const response = await fetch(`http://52.67.83.67:3000/obterClienteById/${id}`);
+        const response = await fetch(`https://api.tecercontabilidade.com.br/obterClienteById/${id}`);
         if (!response.ok) {
           throw new Error('Erro ao obter o Cliente');
         }

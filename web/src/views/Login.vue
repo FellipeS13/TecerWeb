@@ -1,4 +1,5 @@
 <template>
+<div class="bg">
   <div class="container">
     <div class="form-container">
       <p>Login</p>
@@ -11,6 +12,7 @@
       </form>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -22,11 +24,10 @@ export default {
       password: ''
     };
   },
-
   methods: {
     login() {
       // Consulta ao servidor
-      fetch('http://52.67.83.67:3000/login', {
+      fetch('https://api.tecercontabilidade.com.br/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -67,11 +68,15 @@ export default {
   align-items: center;
   height: 100vh;
   overflow: hidden;
-  background-image: url("C:\Users\felli\OneDrive\Desktop\TecerWeb\web\src\assets\img\logo.png");
+  background-image: url("../assets/img/whiteLogo.png");
   background-repeat: no-repeat;
   background-size: 18%;
   background-position: top;
   
+}
+.bg{
+    background: url(./src/assets/img/bg.jpg) no-repeat;
+    background-size: cover;
 }
 
 .form-container {

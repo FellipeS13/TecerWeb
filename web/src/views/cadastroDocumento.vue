@@ -108,7 +108,7 @@ export default {
   methods: {
     obterClientes() {
       // Fazer uma requisição para obter a lista de clientes do banco de dados
-      fetch('http://52.67.83.67:3000/buscarClientes')
+      fetch('https://api.tecercontabilidade.com.br/buscarClientes')
         .then(response => response.json())
         .then(data => {
           this.clientes = data.map(cliente => cliente);
@@ -119,7 +119,7 @@ export default {
     },
     async obterDocumentos() {
       // Fazer uma requisição para obter a lista de clientes do banco de dados
-      await fetch('http://52.67.83.67:3000/obterDocumentos')
+      await fetch('https://api.tecercontabilidade.com.br/obterDocumentos')
         .then(response => response.json())
         .then(data => {
           this.dadosTabela = data.map(documento => documento);
@@ -156,7 +156,7 @@ export default {
       formData.append('arquivo', this.documento.arquivo);
 
       // Envie o formulário para o servidor
-      fetch('http://52.67.83.67:3000/documentos', {
+      fetch('https://api.tecercontabilidade.com.br/documentos', {
         method: 'POST',
         body: formData,
       })
@@ -202,7 +202,7 @@ export default {
         });
 
         if (result.isConfirmed) {
-          await fetch(`http://52.67.83.67:3000/deletarDoc/${id}`, {
+          await fetch(`https://api.tecercontabilidade.com.br/deletarDoc/${id}`, {
             method: 'DELETE'
           }).then(response => {
             if (response.ok) {
@@ -229,7 +229,7 @@ export default {
     },
     async obterDocumentoPorId(id) {
       try {
-        const response = await fetch(`http://52.67.83.67:3000/obterDocumentosById/${id}`);
+        const response = await fetch(`https://api.tecercontabilidade.com.br/obterDocumentosById/${id}`);
         if (!response.ok) {
           throw new Error('Erro ao obter o documento');
         }
@@ -242,7 +242,7 @@ export default {
       }
     },
     async editarDocumento() {
-      await fetch(`http://52.67.83.67:3000/editarDoc/${this.documento.id}`, {
+      await fetch(`https://api.tecercontabilidade.com.br/editarDoc/${this.documento.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -280,7 +280,7 @@ export default {
         });
     },
     async obterCategorias(){
-      fetch('http://52.67.83.67:3000/obterCategorias')
+      fetch('https://api.tecercontabilidade.com.br/obterCategorias')
         .then(response => response.json())
         .then(data => {
           this.categorias = data.map(categoria => categoria);
